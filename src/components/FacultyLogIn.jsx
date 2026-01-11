@@ -17,7 +17,7 @@ export default function FacultyLogin() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/faculty/login",
+        "https://juonlinebackend.onrender.com/api/faculty/login",
         {
           email: data.email,
           password: data.password,
@@ -139,3 +139,4 @@ export default function FacultyLogin() {
     </>
   );
 }
+
