@@ -18,7 +18,7 @@ export default function StudentSignup() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/student/signup",
+        "https://juonlinebackend.onrender.com/api/student/signup",
         {
           name: data.name,
           email: data.email,
@@ -153,3 +153,4 @@ export default function StudentSignup() {
     </>
   );
 }
+
