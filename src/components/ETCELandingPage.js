@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./etce.css";
-
+import { ProjectResearchCarousels } from "./ProjectResearchCarousel";
 const images = [
   "/JUOne.png",
-  "/logo.png",
+  "/SayanSir.png",
   "/favicon.ico",
 ];
 
 export default function ETCEFacultyLandingPage() {
   const [index, setIndex] = useState(0);
   const [showPortal, setShowPortal] = useState(false);
+  const [showSideNav, setShowSideNav] = useState(false);
+
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -27,6 +29,38 @@ export default function ETCEFacultyLandingPage() {
 
   return (
     <div className="etce-root">
+      <button
+  onClick={() => setShowSideNav(!showSideNav)}
+  style={{
+    position: "fixed",
+    bottom: "24px",
+    right: "24px",
+    zIndex: 3000,
+    padding: "12px 18px",
+    borderRadius: "50px",
+    border: "none",
+    background: "#2563eb",
+    color: "white",
+    fontWeight: 600,
+    cursor: "pointer",
+    boxShadow: "0 10px 30px rgba(0,0,0,0.3)"
+  }}
+>
+  {showSideNav ? "Hide Sections" : "Show Sections"}
+</button>
+
+      {/* ================= SIDE NAV ================= */}
+ {showSideNav && (
+  <nav className="etce-side-nav">
+    <a href="#home" onClick={() => setShowSideNav(false)}>Home</a>
+    <a href="#about" onClick={() => setShowSideNav(false)}>About</a>
+    <a href="#hod" onClick={() => setShowSideNav(false)}>HOD</a>
+    <a href="#faculty" onClick={() => setShowSideNav(false)}>Faculty</a>
+    <a href="#projects" onClick={() => setShowSideNav(false)}>Projects</a>
+    <a href="#contact" onClick={() => setShowSideNav(false)}>Contact</a>
+  </nav>
+)}
+
 
       {/* ================= HEADER ================= */}
       <header className="etce-top">
@@ -79,15 +113,27 @@ export default function ETCEFacultyLandingPage() {
 
       {/* ================= CAROUSEL ================= */}
       <section className="etce-hero">
-        <img
-          src={images[index]}
-          alt="ETCE Campus"
-          className="etce-hero-bg"
-        />
+     
+  <img
+    src={images[index]}
+    alt="ETCE Campus"
+    className="etce-hero-bg"
+    style={{
+      width: "100%",          // 👈 IMAGE IS NOW SMALLER
+      height: "100%",         // 👈 IMAGE IS NOW SMALLER
+      objectFit: "contain",  // 👈 NO CROPPING
+      border: "4px solid #e5e7eb",
+      borderRadius: "12px",
+      boxShadow: "0 20px 40px rgba(0,0,0,0.45)",
+      background: "#000",
+    }}
+  />
+ 
+
 
         <div className="etce-overlay"></div>
 
-        <div className="etce-hero-content">
+        <div className="etce-hero-content" id="home">
           <h2>ETCE Faculty & Research Ecosystem</h2>
           <p>
             Advancing education, research, and innovation in Electronics and
@@ -100,7 +146,7 @@ export default function ETCEFacultyLandingPage() {
       </section>
 
       {/* ================= INFO SECTION ================= */}
-      <section className="etce-info-section">
+      <section className="etce-info-section" id="about">
         <div className="etce-info-card">
           <h3>About the ETCE Department</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -118,7 +164,7 @@ export default function ETCEFacultyLandingPage() {
       </section>
       {/*=======Depaartment Head ======*/}
       {/* ================= HOD SECTION ================= */}
-<section className="etce-extra-section">
+<section className="etce-extra-section" id="hod">
   <div className="etce-section-bar">
     Head of the Department
   </div>
@@ -149,7 +195,7 @@ export default function ETCEFacultyLandingPage() {
     Notable Professors
   </div>
 
-  <div className="etce-professor-grid">
+  <div className="etce-professor-grid" id="faculty">
     <div className="etce-prof-card">
       <img
         src="/ShelimamSir.png"
@@ -195,8 +241,17 @@ export default function ETCEFacultyLandingPage() {
     </div>
   </div>
 </section>
+{/* ================= PROJECTS & RESEARCH ================= */}
+<section className="etce-extra-section" id ="projects">
+  <div className="etce-section-bar">
+    Projects & Research Showcase
+  </div>
+
+  <ProjectResearchCarousels />
+</section>
+
 {/* ================= CONTACT US BAR ================= */}
-<footer className="etce-contact-footer">
+<footer className="etce-contact-footer" id="contact">
   <div className="contact-left">
     © ETCE Department, Jadavpur University
   </div>
@@ -206,6 +261,9 @@ export default function ETCEFacultyLandingPage() {
     <span>✉️ etce.contact@ju.edu</span>
   </div>
 </footer>
+
+ 
+
 
     </div>
   );

@@ -14,7 +14,7 @@ export default function FacultyVerifyOtp() {
 
     try {
       const res = await axios.post(
-        "https://juonlinebackend.onrender.com/api/faculty/verify-otp",
+        "http://localhost:5000/api/faculty/verify-otp",
         { email, otp }
       );
 
@@ -42,4 +42,3 @@ export default function FacultyVerifyOtp() {
     </form>
   );
 }
-

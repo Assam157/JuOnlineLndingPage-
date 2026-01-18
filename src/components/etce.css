@@ -1,10 +1,11 @@
+/* ================= ROOT ================= */
 .etce-root {
   font-family: "Segoe UI", Arial, sans-serif;
   background: #f3f4f6;
   color: #111827;
 }
 
-/* TOP BAR */
+/* ================= TOP BAR ================= */
 .etce-top {
   display: flex;
   justify-content: space-between;
@@ -27,7 +28,7 @@
   height: 46px;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 .etce-nav {
   display: flex;
   justify-content: center;
@@ -46,11 +47,61 @@
   color: #38bdf8;
 }
 
-/* HERO */
+/* ================= PORTAL BUTTON ================= */
+.portal-btn {
+  margin-left: 20px;
+  padding: 8px 14px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.portal-btn:hover {
+  background: #1d4ed8;
+}
+
+/* ================= PORTAL DROPDOWN ================= */
+.etce-portal-section {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 30px;
+  background: #e5e7eb;
+}
+
+.portal-card {
+  background: white;
+  padding: 24px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.portal-card h3 {
+  margin-bottom: 14px;
+}
+
+.portal-card a {
+  display: block;
+  margin: 8px auto;
+  padding: 8px;
+  background: #0f172a;
+  color: white;
+  text-decoration: none;
+}
+
+.portal-card a:hover {
+  background: #2563eb;
+}
+
+/* ================= HERO (16:9 FIX) ================= */
 .etce-hero {
   position: relative;
-  height: 520px;
+  width: 100%;
   overflow: hidden;
+  height: 520px;
 }
 
 .etce-hero-bg {
@@ -123,13 +174,6 @@
   font-size: 15px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .etce-info-section {
-    grid-template-columns: 1fr;
-    padding: 50px 24px;
-  }
-}
 /* ================= AUTH SECTION ================= */
 .etce-auth-section {
   padding: 70px 80px;
@@ -174,69 +218,6 @@
   background: #2563eb;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .etce-auth-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ================= PORTAL NAV BUTTON ================= */
-.portal-btn {
-  margin-left: 20px;
-  padding: 8px 14px;
-  background: #2563eb;
-  color: white;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.portal-btn:hover {
-  background: #1d4ed8;
-}
-
-/* ================= PORTAL DROPDOWN ================= */
-.etce-portal-section {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 30px;
-  background: #e5e7eb;
-}
-
-.portal-card {
-  background: white;
-  padding: 24px;
-  width: 220px;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.portal-card h3 {
-  margin-bottom: 14px;
-}
-
-.portal-card a {
-  display: block;
-  margin: 8px auto;
-  padding: 8px;
-  background: #0f172a;
-  color: white;
-  text-decoration: none;
-}
-
-.portal-card a:hover {
-  background: #2563eb;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .etce-portal-section {
-    flex-direction: column;
-    align-items: center;
-  }
-}
 /* ================= EXTRA SECTIONS ================= */
 .etce-extra-section {
   background: #ffffff;
@@ -252,7 +233,6 @@
   margin-bottom: 30px;
 }
 
-/* HOD CONTENT */
 .etce-extra-content {
   display: flex;
   gap: 30px;
@@ -267,7 +247,7 @@
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* PROFESSOR GRID */
+/* ================= PROFESSOR GRID ================= */
 .etce-professor-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -291,6 +271,68 @@
   line-height: 1.6;
 }
 
+/* ================= PROJECTS & RESEARCH ================= */
+.etce-dual-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.etce-carousel-card {
+  background: #f8fafc;
+  padding: 30px;
+  border-top: 5px solid #0ea5e9;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
+
+.etce-carousel-slide img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 36px;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+.carousel-control.left { left: 12px; }
+.carousel-control.right { right: 12px; }
+
+/* ================= SIDE NAV ================= */
+.etce-side-nav {
+  position: fixed;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 2000;
+}
+
+.etce-side-nav a {
+  background: #020617;
+  color: #e5e7eb;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.etce-side-nav a:hover {
+  background: #2563eb;
+}
+
 /* ================= CONTACT FOOTER ================= */
 .etce-contact-footer {
   display: flex;
@@ -302,27 +344,62 @@
   font-size: 14px;
 }
 
-.contact-right span {
-  margin-left: 24px;
-}
-
 /* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
+  .etce-info-section,
+  .etce-extra-section {
+    padding: 40px 24px;
+  }
+
+  .etce-info-section,
+  .etce-professor-grid,
+  .etce-dual-section {
+    grid-template-columns: 1fr;
+  }
+
   .etce-extra-content {
     flex-direction: column;
     text-align: center;
   }
 
-  .etce-professor-grid {
-    grid-template-columns: 1fr;
+  .etce-side-nav {
+    display: none;
   }
+}
+/* Ensure the card is the reference point for absolute positioning */
+.etce-carousel-card {
+  position: relative; /* CRITICAL */
+  background: #f8fafc;
+  padding: 30px;
+  border-top: 5px solid #0ea5e9;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
 
-  .etce-extra-section {
-    padding: 40px 24px;
-  }
+/* Fix the class name and styling */
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px; /* Adjusted size */
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%; /* Makes them circular */
+  transition: background 0.3s;
+  z-index: 10;
+}
 
-  .etce-contact-footer {
-    flex-direction: column;
-    gap: 10px;
-  }
+.carousel-controls:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Position them on the actual edges */
+.carousel-controls.left {
+  left: 10px;
+}
+
+.carousel-controls.right {
+  right: 10px;
 }

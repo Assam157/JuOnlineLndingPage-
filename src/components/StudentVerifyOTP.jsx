@@ -18,7 +18,7 @@ export default function StudentVerifyOtp() {
 
     try {
       const res = await axios.post(
-        "https://juonlinebackend.onrender.com/api/student/verify-otp",
+        "http://localhost:5000/api/student/verify-otp",
         {
           email,
           otp,
@@ -106,4 +106,3 @@ export default function StudentVerifyOtp() {
     </>
   );
 }
-
